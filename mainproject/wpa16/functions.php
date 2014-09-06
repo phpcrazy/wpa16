@@ -15,8 +15,12 @@ function view_loader($view, $data = null) {
 }
 
 function config_get($query) {
-	dump($query, true);
-	 
+	$e_query = explode('.', $query);
+	$config_data = require DD . '/app/config/' 
+		. $e_query[0] . '.php';
+	array_shift($e_query);
+	$result = arrayResolver($e_query, $config_data);
+	return $result;
 }
 
 function dump($value, $die = false) {
@@ -24,6 +28,13 @@ function dump($value, $die = false) {
 	if($die == true) {
 		die();
 	}
+}
+
+function arrayResolver($key, $default_array) {
+	foreach ($key as $k => $value) {
+		$default_array = $default_array[$value];
+	}
+	return $default_array;
 }
 
 ?>
