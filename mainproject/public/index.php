@@ -16,6 +16,9 @@ switch($page) {
 	case "blog":
 		blog_controller();
 		break;
+	case "student":
+		student_controller();
+		break;
 	default:
 		echo "404";
 		break;

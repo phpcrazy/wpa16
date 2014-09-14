@@ -1,7 +1,10 @@
 <?php 
 
 return array(
-	'dbname'	=> 'test'
+	'hostname'	=> 'localhost',
+	'username'	=> 'root',
+	'password'	=> 'mmlinks',
+	'dbname'	=> 'wpa16_students'
 	);
 
  ?>

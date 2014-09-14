@@ -14,4 +14,9 @@ function blog_controller() {
 	view_loader('blog');
 }
 
+function student_controller() {
+	$students = get_data('students', 1);
+	var_dump($students);
+}
+
  ?>
