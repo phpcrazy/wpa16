@@ -51,7 +51,9 @@ function get_data($table, $id = null) {
 		$stmt = $pdo->prepare('SELECT * FROM ' . $table);
 		$stmt->execute();	
 	} else {
-		
+		$stmt = $pdo->prepare("SELECT * FROM " . $table 
+			.  " WHERE id = :id");
+		$stmt->execute(array("id" => $id));
 	}
 	$pdo = null;
 	return $stmt->fetchAll(PDO::FETCH_ASSOC);	
