@@ -7,5 +7,6 @@ $baseDir = dirname($vendorDir);
 
 return array(
     'Config' => $baseDir . '/wpa16/src/loader/ConfigLoader.php',
+    'HomeController' => $baseDir . '/app/controller/HomeController.php',
     'View' => $baseDir . '/wpa16/src/loader/ViewLoader.php',
 );

@@ -4,8 +4,8 @@ define("DD", __DIR__ . "/../");
 
 require DD . "vendor/autoload.php";
 
-dump(Config::get('site.title'));
+var_dump($_SERVER['REQUEST_URI']);
+var_dump($_SERVER['SCRIPT_NAME']);
 
-View::load('home');
 
- ?>
+?>

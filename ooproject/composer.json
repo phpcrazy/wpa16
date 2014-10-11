@@ -1,7 +1,8 @@
 {
 	"autoload": {
 		"classmap": [
-			"wpa16/src/loader"
+			"wpa16/src/loader",
+			"app/controller"
 		],
 		"files": [
 			"wpa16/src/helper.php"
