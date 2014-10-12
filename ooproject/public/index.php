@@ -3,6 +3,12 @@
 define("DD", __DIR__ . "/../");
 require DD . "vendor/autoload.php";
 
+$students = DB::table('students')->get();
+$products = DB::table('products')->get();
+
+var_dump($students);
+var_dump($products);
+
 $requestURI = explode('/', strtolower($_SERVER['REQUEST_URI']));
 $scriptName = explode('/', strtolower($_SERVER['SCRIPT_NAME']));
 $request_uri = array_diff($requestURI, $scriptName);
