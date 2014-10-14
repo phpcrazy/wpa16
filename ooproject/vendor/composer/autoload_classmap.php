@@ -9,7 +9,10 @@ return array(
     'BlogController' => $baseDir . '/app/controller/BlogController.php',
     'Config' => $baseDir . '/wpa16/src/loader/ConfigLoader.php',
     'DB' => $baseDir . '/wpa16/src/loader/DataProvider.php',
+    'DBOne' => $baseDir . '/wpa16/src/loader/trDataProdiverOne.php',
+    'DBTwo' => $baseDir . '/wpa16/src/loader/trDataProviderTwo.php',
     'HomeController' => $baseDir . '/app/controller/HomeController.php',
     'PageController' => $baseDir . '/app/controller/PageController.php',
+    'Singleton' => $baseDir . '/wpa16/src/loader/Singalenton.php',
     'View' => $baseDir . '/wpa16/src/loader/ViewLoader.php',
 );
