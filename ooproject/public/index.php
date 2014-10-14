@@ -3,8 +3,11 @@
 define("DD", __DIR__ . "/../");
 require DD . "vendor/autoload.php";
 
-$students = DB::table('students')->get();
-$products = DB::table('products')->get();
+$students = DB::table('students')->select(array('name', 'address', 'email'))->get();
+dump($students);
+$another_students = DB::table('students')->where('name', '=','Aung Aung')->get();
+dump($another_students, true);
+// $products = DB::table('products')->get();
 
 $requestURI = explode('/', strtolower($_SERVER['REQUEST_URI']));
 $scriptName = explode('/', strtolower($_SERVER['SCRIPT_NAME']));
