@@ -8,43 +8,46 @@ class DB {
 	
 	private $sql_statement;
 
-	private $select_trigger = false;
+	private $select='*';
+
+	private $from;
+
+
+	private $where;
 
 	public static function table($table_name) {
 		if(!(self::$_instance instanceof DB)) {
 			self::$_instance = new DB();
 		}
-		self::$_instance->sql_statement = " FROM " . $table_name;
+		self::$_instance->from = " FROM " . $table_name;
 		
 		return self::$_instance;
 	}
 
 	public function select(array $columns) {
-		$this->select_trigger = true;
 		$extracted_columns = '';
 		foreach($columns as $c) {
 			$extracted_columns .= ", " . $c;
 		}
 		$extracted_columns = trim($extracted_columns, ',');
-		$this->sql_statement = "SELECT" . $extracted_columns .  $this->sql_statement;
+		$this->select = $extracted_columns;
 		return $this;
 	}
 
+public function where($name,$opreator,$value){
+$this->where=" WHERE ".$name.$opreator."'$value'";
+return $this;
+	}
+
 	public function get() {
-		if($this->select_trigger == true) {
-			$stmt = $this->pdo->prepare($this->sql_statement);
-			$this->select_trigger = false;
-		} else {
-			$this->sql_statement = "SELECT *" . $this->sql_statement;
-			$stmt = $this->pdo->prepare($this->sql_statement);
-		}
+        $this->sql_statement="SELECT ".$this->select.$this->from.$this->where;
+		$stmt = $this->pdo->prepare($this->sql_statement);
 		$stmt->execute();
 		return $stmt->fetchAll(PDO::FETCH_ASSOC);
 		return $this->table_data;
 	}
 
 	public function __construct() {
-		echo "Constructor!";
 		$host = Config::get('database.hostname');
 		$dbname = Config::get('database.dbname');
 		$username = Config::get('database.username');
@@ -58,7 +61,6 @@ class DB {
 	}
 
 	public function __destruct() {
-		echo "Destructor!";
 		$this->pdo = null;
 	}
 
