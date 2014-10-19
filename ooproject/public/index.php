@@ -1,11 +1,20 @@
 <?php 
+// to do
+// orWhere, andWhere
+// like
+// order by
+// join
 
 define("DD", __DIR__ . "/../");
 require DD . "vendor/autoload.php";
 
-$students = DB::table('students')->select(array('name', 'address', 'email'))->get();
+$students = DB::table('students')
+	->select(array('name', 'address', 'email'))
+	->get();
 dump($students);
-$another_students = DB::table('students')->where('name', '=','Aung Aung')->get();
+$another_students = DB::table('students')
+	->where('name', '=','Aung Aung')
+	->get();
 dump($another_students, true);
 // $products = DB::table('products')->get();
 
