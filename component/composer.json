@@ -1,5 +1,6 @@
 {
 	"require": {
-		"symfony/http-foundation": "2.6.*@dev"
+		"symfony/http-foundation": "2.6.*@dev",
+		"symfony/routing": "2.6.*@dev"
 	}
 }
