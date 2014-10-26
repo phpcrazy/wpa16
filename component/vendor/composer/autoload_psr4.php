@@ -6,4 +6,5 @@ $vendorDir = dirname(dirname(__FILE__));
 $baseDir = dirname($vendorDir);
 
 return array(
+    'Wpa16\\' => array($baseDir . '/wpa16/src/Wpa16'),
 );

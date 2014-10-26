@@ -8,4 +8,7 @@ $routes->add('hello', new Route('/hello/{name}',
 $routes->add('bye', new Route('/bye'));
 $routes->add('foo', new Route('/foo'));
 $routes->add('goo', new Route('/goo'));
+$routes->add('home', new Route('/'));
+
+return $routes;
 ?>
