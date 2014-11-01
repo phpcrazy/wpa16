@@ -1,0 +1,9 @@
+hello:
+path: /hello
+defaults: { _controller: 'MyController::fooAction' }
+bye:
+path: /bye
+defaults: { _controller: 'MyController::foobarAction' }
+test:
+path: /test
+defaults: { _controller: 'TestController::actionIndex' }

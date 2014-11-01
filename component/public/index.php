@@ -7,8 +7,4 @@ use Wpa16\Core\Application;
 
 $app = new Application();
 $app->run();
-unset($app);
-
-
-
  ?>

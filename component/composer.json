@@ -2,11 +2,16 @@
 	"require": {
 		"symfony/http-foundation": "2.5.*@dev",
 		"symfony/routing": "2.5.*@dev",
-		"symfony/http-kernel": "2.5.*@dev"
+		"symfony/http-kernel": "2.5.*@dev",
+		"symfony/config": "2.5.*@dev",
+		"symfony/yaml": "2.5.*@dev"
 	},
 	"autoload": {
 		"psr-4": {
 			"Wpa16\\" : "wpa16/src/Wpa16"
-		}
+		},
+		"classmap": [
+			"app/controller"
+		]
 	}
 }
